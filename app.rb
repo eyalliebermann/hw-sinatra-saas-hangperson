@@ -41,7 +41,7 @@ class HangpersonApp < Sinatra::Base
     letter = params[:guess].to_s[0]
     ### YOUR CODE HERE ###
     @game.guess letter
-    redirect '/show' , :game => @game
+    redirect '/show'
   end
   
   # Everytime a guess is made, we should eventually end up at this route.
@@ -51,6 +51,7 @@ class HangpersonApp < Sinatra::Base
   # wrong_guesses and word_with_guesses from @game.
   get '/show' do
     ### YOUR CODE HERE ###
+    @game=@game
     erb :show # You may change/remove this line
   end
   
